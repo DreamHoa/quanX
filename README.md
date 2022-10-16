@@ -1,2 +1,2 @@
-# quanX
+# quantumultX
 # 仅自用
