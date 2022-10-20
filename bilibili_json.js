@@ -166,6 +166,7 @@ if (magicJS.read(blackKey)) {
             }
             delete obj.data.vip_section_v2;
             delete obj.data.vip_section;
+            delete obj.data.vip_section_right;
             obj["data"]["sections_v2"][index]["items"] = items;
             //2022-03-05 add by ddgksf2013
             if(obj.data.hasOwnProperty("live_tip")){
@@ -175,10 +176,10 @@ if (magicJS.read(blackKey)) {
                 obj["data"]["answer"]={};
             }
             obj["data"]["vip_section_right"]["id"] = 6464;
-            obj["data"]["vip_type"] = 3;
-            obj["data"]["vip"]["type"] = 3;
-            obj["data"]["vip"]["status"] = 2;
-            obj["data"]["vip"]["vip_pay_type"] = 2;
+            obj["data"]["vip_type"] = 1;
+            obj["data"]["vip"]["type"] = 1;
+            obj["data"]["vip"]["status"] = 1;
+            obj["data"]["vip"]["vip_pay_type"] = 1;
             obj["data"]["vip"]["due_date"] = 1697792861;
           });
           body = JSON.stringify(obj);
@@ -215,9 +216,9 @@ if (magicJS.read(blackKey)) {
         try {
           let obj = JSON.parse(magicJS.response.body);
           //magicJS.logInfo(`公众号墨鱼手记`);
-          obj["data"]["vip"]["type"] = 3;
-          obj["data"]["vip"]["status"] = 2;
-          obj["data"]["vip"]["vip_pay_type"] = 2;
+          obj["data"]["vip"]["type"] = 1;
+          obj["data"]["vip"]["status"] = 1;
+          obj["data"]["vip"]["vip_pay_type"] = 1;
           obj["data"]["vip"]["due_date"] = 1697792861;
           body = JSON.stringify(obj);
         } catch (err) {
