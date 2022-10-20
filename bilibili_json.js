@@ -179,7 +179,7 @@ if (magicJS.read(blackKey)) {
             obj["data"]["vip"]["type"] = 2;
             obj["data"]["vip"]["status"] = 1;
             obj["data"]["vip"]["vip_pay_type"] = 1;
-            obj["data"]["vip"]["due_date"] = 4669824160;
+            obj["data"]["vip"]["due_date"] = 1697792861;
           });
           body = JSON.stringify(obj);
         } catch (err) {
@@ -218,7 +218,7 @@ if (magicJS.read(blackKey)) {
           obj["data"]["vip"]["type"] = 2;
           obj["data"]["vip"]["status"] = 1;
           obj["data"]["vip"]["vip_pay_type"] = 1;
-          obj["data"]["vip"]["due_date"] = 4669824160;
+          obj["data"]["vip"]["due_date"] = 1697792861;
           body = JSON.stringify(obj);
         } catch (err) {
           magicJS.logError(`1080P出现异常：${err}`);
