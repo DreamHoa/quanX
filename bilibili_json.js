@@ -174,7 +174,6 @@ if (magicJS.read(blackKey)) {
             if(obj.data.hasOwnProperty("answer")){
                 obj["data"]["answer"]={};
             }
-            obj["data"]["vip_section_right"]["id"] = 6464;
             obj["data"]["vip_type"] = 1;
             obj["data"]["vip"]["type"] = 1;
             obj["data"]["vip"]["status"] = 1;
