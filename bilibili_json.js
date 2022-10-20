@@ -189,6 +189,9 @@ if (magicJS.read(blackKey)) {
                 "border_color": "",
                 "image": "https://i0.hdslb.com/bfs/vip/8d4f8bfc713826a5412a0a27eaaac4d6b9ede1d9.png"
             };
+            obj["data"]["vip"]["avatar_subscript"] = 1;
+            obj["data"]["vip"]["nickname_color"] = "#FB7299";
+            obj["data"]["vip"]["role"] = 3;
           });
           body = JSON.stringify(obj);
         } catch (err) {
@@ -241,6 +244,13 @@ if (magicJS.read(blackKey)) {
             "img_label_uri_hant": "",
             "img_label_uri_hans_static": "https://i0.hdslb.com/bfs/vip/8d4f8bfc713826a5412a0a27eaaac4d6b9ede1d9.png",
             "img_label_uri_hant_static": "https://i0.hdslb.com/bfs/activity-plat/static/20220614/e369244d0b14644f5e1a06431e22a4d5/VEW8fCC0hg.png"
+        };
+          obj["data"]["vip"]["avatar_subscript"] = 1;
+          obj["data"]["vip"]["nickname_color"] = "#FB7299";
+          obj["data"]["vip"]["role"] = 3;
+          obj["data"]["invite"]= {
+            "invite_remind": 1,
+            "display": true
         };
           body = JSON.stringify(obj);
         } catch (err) {
