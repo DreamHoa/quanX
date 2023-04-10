@@ -1,4 +1,4 @@
-[Script]
+[URL Rewrite]
 # gh xxx (GitHub)
 ^https:\/\/duckduckgo.com\/\?q=gh(\+|%20)([^&]+).+ https://github.com/search?q=$2 302
 
