@@ -1,8 +1,5 @@
-[MITM]
-hostname = duckduckgo.com
-
 [Script]
-# gh    xxx (GitHub)
+# gh xxx (GitHub)
 ^https:\/\/duckduckgo.com\/\?q=gh(\+|%20)([^&]+).+ https://github.com/search?q=$2 302
 
 # gd  xxx (Google 搜索 Google Drive 资源)
@@ -22,3 +19,6 @@ hostname = duckduckgo.com
 
 #     xxx （无指令默认为 Google）
 ^https:\/\/duckduckgo.com\/\?q=(?!dl(c|e|j)(\+|%20))([^&]+).+ https://www.google.com/search?q=$3&num=100 302
+
+[MITM]
+hostname = duckduckgo.com
