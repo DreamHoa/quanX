@@ -1,3 +1,7 @@
+#!name=Search
+#!desc=自用搜索
+
+
 [URL Rewrite]
 # wk xxx (Wikipedia 中文)
 ^https:\/\/duckduckgo.com\/\?q=wk(\+|%20)([^&]+).+ https://zh.wikipedia.org/wiki/$2 302
