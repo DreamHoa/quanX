@@ -1,5 +1,7 @@
 #!name = 自用复写
 #!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/RIP.png
+#!desc=自用搜索
+
 [MITM]
 hostname = jad-api.jin10.com, res.kfc.com.cn, ma-adx.ctrip.com, m.ctrip.com, mbd.baidu.com, api.pinduoduo.com, api.yangkeduo.com
 
