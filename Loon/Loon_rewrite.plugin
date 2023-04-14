@@ -7,16 +7,16 @@ hostname = jad-api.jin10.com, res.kfc.com.cn, ma-adx.ctrip.com, m.ctrip.com, mbd
 
 [Rewrite]
 # 金十数据
-^https:\/\/jad-api\.jin10\.com\/ad url reject
+^https?:\/\/jad-api\.jin10\.com\/ad - reject
 
 # KFC
-^https:\/\/res.kfc.com.cn\/advertisement\/ url reject
+^https?:\/\/res.kfc.com.cn\/advertisement\/ - reject
 
 # 携程
-^https:\/\/ma-adx\.ctrip\.com\/_ma\.gif url reject
-^https:\/\/m\.ctrip\.com\/restapi\/.+json\/tripAds url reject
-^https:\/\/m\.ctrip\.com\/html5\/webresource\/js\/iscroll\.js$ url reject
-^https:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\?page\=landingshare url reject
+^https?:\/\/ma-adx\.ctrip\.com\/_ma\.gif - reject
+^https?:\/\/m\.ctrip\.com\/restapi\/.+json\/tripAds - reject
+^https?:\/\/m\.ctrip\.com\/html5\/webresource\/js\/iscroll\.js$ - reject
+^https?:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\?page\=landingshare - reject
 
 # 拼多多
-^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash url reject
+^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
