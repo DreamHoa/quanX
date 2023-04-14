@@ -1,0 +1,20 @@
+#!name = 自用复写
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Auto.png
+[MITM]
+hostname = jad-api.jin10.com, res.kfc.com.cn, ma-adx.ctrip.com, m.ctrip.com, mbd.baidu.com, api.pinduoduo.com, api.yangkeduo.com
+
+[Rewrite]
+# 金十数据
+^https:\/\/jad-api\.jin10\.com\/ad url reject
+
+# KFC
+^https:\/\/res.kfc.com.cn\/advertisement\/ url reject
+
+# 携程
+^https:\/\/ma-adx\.ctrip\.com\/_ma\.gif url reject
+^https:\/\/m\.ctrip\.com\/restapi\/.+json\/tripAds url reject
+^https:\/\/m\.ctrip\.com\/html5\/webresource\/js\/iscroll\.js$ url reject
+^https:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\?page\=landingshare url reject
+
+# 拼多多
+^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash url reject
