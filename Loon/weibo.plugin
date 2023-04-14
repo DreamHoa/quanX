@@ -50,3 +50,5 @@ http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/video/(community_tab|remind
 http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/search/(finder|container_timeline|container_discover)? script-path = https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, requires-body = true, tag = 去广告以及去除各部分推广模块
 http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/(checkin/show|\!/live/media_homelist|comments/build_comments|container/get_item)? script-path = https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, requires-body = true, tag = 去广告以及去除各部分推广模块
 http-response ^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/cardlist? script-path = https://github.com/ddgksf2013/Scripts/raw/master/weibo_json.js, requires-body = true, tag = 去广告以及去除各部分推广模块
+
+http-response ^https:\/\/wbapp\.uve\.weibo\.com\/wbapplua\/wbpullad\.lua\? script-path = https://gitlab.com/lodepuly/vpn_tool/raw/main/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body = true, tag = 移除开屏广告
