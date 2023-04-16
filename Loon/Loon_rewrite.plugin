@@ -3,7 +3,7 @@
 #!desc=自用复写
 
 [MITM]
-hostname = jad-api.jin10.com, res.kfc.com.cn, ma-adx.ctrip.com, m.ctrip.com, mbd.baidu.com, api.pinduoduo.com, api.yangkeduo.com,api.douban.com
+hostname = jad-api.jin10.com, res.kfc.com.cn, ma-adx.ctrip.com, m.ctrip.com, mbd.baidu.com, api.pinduoduo.com, api.yangkeduo.com,api.douban.com,hl.snssdk.com
 
 [Rewrite]
 # 金十数据
@@ -24,3 +24,10 @@ hostname = jad-api.jin10.com, res.kfc.com.cn, ma-adx.ctrip.com, m.ctrip.com, mbd
 # 豆瓣
 ^https?:\/\/api\.douban\.com\/v2\/app_ads\/splash - reject
 ^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* - reject
+
+# 字节跳动
+^https?:\/\/[\w-]+\.(amemv|musical|snssdk|tiktokv)\.(com|ly)\/(api|motor)\/ad\/ - reject
+^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/ad\/ - reject
+^https?:\/\/[\w-]+\.snssdk\.com\/.+_ad\/ - reject
+^https?:\/\/[\w-]+\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/ - reject
+^https?:\/\/.+?\/img\/ad\.union\.api\/ - reject
