@@ -3,7 +3,11 @@
 #!desc=自用复写
 
 [MITM]
-hostname = jad-api.jin10.com, res.kfc.com.cn, ma-adx.ctrip.com, m.ctrip.com, mbd.baidu.com, api.pinduoduo.com, api.yangkeduo.com,api.douban.com,hl.snssdk.com
+hostname = jad-api.jin10.com, res.kfc.com.cn, ma-adx.ctrip.com, m.ctrip.com, mbd.baidu.com, api.pinduoduo.com, api.yangkeduo.com,api.douban.com,hl.snssdk.com,home.mi.com,gw.alicdn.com,acs.m.taobao.com,mlol.qt.qq.com,m.client.10010.com,peisongapi.meituan.com,img.meituan.net,s3plus.meituan.net,flowplus.meituan.net,p*.meituan.net,www.meituan.com,wmapi.meituan.com,acs.m.taobao.com,elemecdn.com,fuss10.elemecdn.com,www1.elecfans.com,interface*.music.163.com,app.58.com,adproxy.autohome.com.cn,app2.autoimg.cn
+
+[Rule]
+# 米家
+DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
 
 [Rewrite]
 # 金十数据
@@ -31,3 +35,55 @@ hostname = jad-api.jin10.com, res.kfc.com.cn, ma-adx.ctrip.com, m.ctrip.com, mbd
 ^https?:\/\/[\w-]+\.snssdk\.com\/.+_ad\/ - reject
 ^https?:\/\/[\w-]+\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/ - reject
 ^https?:\/\/.+?\/img\/ad\.union\.api\/ - reject
+
+# 米家
+^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/myTab reject
+^https:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|myTab)\? reject-dict
+
+# 闲鱼
+^https:\/\/gw\.alicdn\.com\/mt\/ - reject
+^https:\/\/gw\.alicdn\.com\/tfs\/.+\d{3,4}-\d{4} - reject
+^https:\/\/gw\.alicdn\.com\/tps\/.+\d{3,4}-\d{4} - reject
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome - reject
+
+# 掌上英雄联盟
+^https?:\/\/mlol\.qt\.qq\.com\/go\/recommend - reject
+
+# 中国联通
+^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv) - reject
+^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd) - reject
+
+# 美团
+^https?:\/\/peisongapi\.meituan\.com\/client\/getInitiateImage - reject
+^https?:\/\/img\.meituan\.net\/(adunion|display|midas)\/\w+\.(gif|jpg|jpg\.webp)$ - reject
+^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4) - reject
+^https?:\/\/p\d\.meituan\.net\/(bizad|wmbanner)\/\w+\.jpg - reject
+^https?:\/\/p\d\.meituan\.net\/movie\/\w+\.jpg\?may_covertWebp - reject
+
+# 美团外卖
+^https?:\/\/img\.meituan\.net\/(bizad|brandCpt)\/\w+\.(png|jpg) - reject
+^https?:\/\/.*\.meituan\.com\/api\/v\d\/(openscreen\?ad|appstatus\?ad|loadInfo\?|startpicture) - reject
+^http:\/\/s3plus\.meituan\.net\/.*\/brandcpt-vedio\/.*\?time - reject
+
+# 饿了吗
+^https?:\/\/elemecdn.com\/.+\/sitemap - reject
+^https?:\/\/fuss10.elemecdn.com\/.+\/w\/640\/h\/\d{3,4} - reject
+^https?:\/\/fuss10.elemecdn.com\/.+\/w\/750\/h\/\d{3,4} - reject
+^https?:\/\/fuss10.elemecdn.com\/.+.mp4 - reject
+^https?:\/\/www1.elecfans.com\/www\/delivery\/ - reject
+
+# 网易云音乐
+#^https?:\/\/interface(\d)?.music.163.com\/eapi\/ad\/ - reject
+
+# 阿里巴巴
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv\/ - reject
+
+# 掌上生活
+#^https?:\/\/mlife\.cmbchina\.com\/ClientFaceService\/api\/mlife\.clientface\.clientservice\.api\.advertiseService\/preCacheAdvertiseSec - reject
+
+# > 58
+^https?:\/\/app\.58\.com\/api\/home\/(advertising|appadv) - reject
+
+# 汽车之家
+^https?:\/\/adproxy.autohome.com.cn\/AdvertiseService\/ - reject
+^https?:\/\/app2.autoimg.cn\/appdfs\/ - reject
