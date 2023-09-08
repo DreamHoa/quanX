@@ -9,5 +9,4 @@ hostname = app.bilibili.com
 
 [Script]
 # BiliBili高画质
-http-response
-^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\? script-path =  https://github.com/ddgksf2013/Scripts/raw/master/bilibili_json.js, requires-body = true, tag = BliBli解锁画质
+http-response ^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\? script-path =  https://github.com/ddgksf2013/Scripts/raw/master/bilibili_json.js, requires-body = true, tag = BliBli解锁画质
