@@ -88,5 +88,6 @@ DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
 ^https?:\/\/adproxy.autohome.com.cn\/AdvertiseService\/ - reject
 ^https?:\/\/app2.autoimg.cn\/appdfs\/ - reject
 
+[Script]
 # > 12306
-^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList url script-analyze-echo-response https://github.com/ddgksf2013/Scripts/raw/master/12306.js
+http-request ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/12306.js, requires-body=true, timeout=60, tag=12306
