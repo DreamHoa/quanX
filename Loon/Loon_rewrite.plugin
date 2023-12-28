@@ -3,7 +3,7 @@
 #!desc=自用复写
 
 [MITM]
-hostname = jad-api.jin10.com, res.kfc.com.cn, ma-adx.ctrip.com, m.ctrip.com, mbd.baidu.com, api.pinduoduo.com, api.yangkeduo.com,api.douban.com,hl.snssdk.com,home.mi.com,gw.alicdn.com,acs.m.taobao.com,mlol.qt.qq.com,m.client.10010.com,peisongapi.meituan.com,img.meituan.net,s3plus.meituan.net,flowplus.meituan.net,p*.meituan.net,www.meituan.com,wmapi.meituan.com,acs.m.taobao.com,elemecdn.com,fuss10.elemecdn.com,www1.elecfans.com,interface*.music.163.com,app.58.com,adproxy.autohome.com.cn,app2.autoimg.cn
+hostname = jad-api.jin10.com, res.kfc.com.cn, ma-adx.ctrip.com, m.ctrip.com, mbd.baidu.com, api.pinduoduo.com, api.yangkeduo.com,api.douban.com,hl.snssdk.com,home.mi.com,gw.alicdn.com,acs.m.taobao.com,mlol.qt.qq.com,m.client.10010.com,peisongapi.meituan.com,img.meituan.net,s3plus.meituan.net,flowplus.meituan.net,p*.meituan.net,www.meituan.com,wmapi.meituan.com,acs.m.taobao.com,elemecdn.com,fuss10.elemecdn.com,www1.elecfans.com,interface*.music.163.com,app.58.com,adproxy.autohome.com.cn,app2.autoimg.cn,ad.12306.cn
 
 [Rule]
 # 米家
@@ -87,3 +87,6 @@ DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
 # 汽车之家
 ^https?:\/\/adproxy.autohome.com.cn\/AdvertiseService\/ - reject
 ^https?:\/\/app2.autoimg.cn\/appdfs\/ - reject
+
+# > 12306
+^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList url script-analyze-echo-response https://github.com/ddgksf2013/Scripts/raw/master/12306.js
