@@ -56,6 +56,8 @@ DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
 # 中国联通
 ^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv) - reject
 ^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd) - reject
+# 中国联通
+DOMAIN-SUFFIX, m1.ad.10010.com, REJECT
 
 # 美团
 ^https?:\/\/peisongapi\.meituan\.com\/client\/getInitiateImage - reject
