@@ -9,6 +9,9 @@ hostname = jad-api.jin10.com, res.kfc.com.cn, ma-adx.ctrip.com, m.ctrip.com, mbd
 # 米家
 DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
 
+# 中国联通
+DOMAIN-SUFFIX, m1.ad.10010.com, REJECT
+
 [Rewrite]
 # 金十数据
 ^https?:\/\/jad-api\.jin10\.com\/ad - reject
@@ -56,8 +59,6 @@ DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
 # 中国联通
 ^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv) - reject
 ^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd) - reject
-# 中国联通
-DOMAIN-SUFFIX, m1.ad.10010.com, REJECT
 
 # 美团
 ^https?:\/\/peisongapi\.meituan\.com\/client\/getInitiateImage - reject
