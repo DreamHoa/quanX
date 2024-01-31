@@ -2,8 +2,9 @@
 #!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/RIP.png
 #!desc=自用复写
 
+# mlol.qt.qq.com,
 [MITM]
-hostname = jad-api.jin10.com, res.kfc.com.cn, ma-adx.ctrip.com, m.ctrip.com, mbd.baidu.com, api.pinduoduo.com, api.yangkeduo.com,api.douban.com,hl.snssdk.com,home.mi.com,gw.alicdn.com,acs.m.taobao.com,mlol.qt.qq.com,m.client.10010.com,peisongapi.meituan.com,img.meituan.net,s3plus.meituan.net,flowplus.meituan.net,p*.meituan.net,www.meituan.com,wmapi.meituan.com,acs.m.taobao.com,elemecdn.com,fuss10.elemecdn.com,www1.elecfans.com,interface*.music.163.com,app.58.com,adproxy.autohome.com.cn,app2.autoimg.cn,ad.12306.cn,iyes.youku.com,acs.m.goofish.com,*pornhub.com,18comic.org,adv.ccb.com
+hostname = jad-api.jin10.com, res.kfc.com.cn, ma-adx.ctrip.com, m.ctrip.com, mbd.baidu.com, api.pinduoduo.com, api.yangkeduo.com,api.douban.com,hl.snssdk.com,home.mi.com,gw.alicdn.com,acs.m.taobao.com,m.client.10010.com,peisongapi.meituan.com,img.meituan.net,s3plus.meituan.net,flowplus.meituan.net,p*.meituan.net,www.meituan.com,wmapi.meituan.com,acs.m.taobao.com,elemecdn.com,fuss10.elemecdn.com,www1.elecfans.com,interface*.music.163.com,app.58.com,adproxy.autohome.com.cn,app2.autoimg.cn,ad.12306.cn,iyes.youku.com,acs.m.goofish.com,*pornhub.com,18comic.org,adv.ccb.com
 
 [Rule]
 # 米家
@@ -54,7 +55,7 @@ DOMAIN-SUFFIX, m1.ad.10010.com, REJECT
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.get\/ reject-dict
 
 # 掌上英雄联盟
-^https?:\/\/mlol\.qt\.qq\.com\/go\/recommend - reject
+# ^https?:\/\/mlol\.qt\.qq\.com\/go\/recommend - reject
 
 # 中国联通
 ^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv) - reject
