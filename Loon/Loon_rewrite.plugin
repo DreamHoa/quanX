@@ -1,111 +1,107 @@
 #!name = 自用复写
+#!desc = 自用广告复写，补充知乎回答底部广告过滤
 #!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/RIP.png
-#!desc=自用复写
-
-# mlol.qt.qq.com,
-[MITM]
-hostname = jad-api.jin10.com, res.kfc.com.cn, ma-adx.ctrip.com, m.ctrip.com, mbd.baidu.com, api.pinduoduo.com, api.yangkeduo.com,api.douban.com,hl.snssdk.com,home.mi.com,gw.alicdn.com,acs.m.taobao.com,m.client.10010.com,peisongapi.meituan.com,img.meituan.net,s3plus.meituan.net,flowplus.meituan.net,p*.meituan.net,www.meituan.com,wmapi.meituan.com,acs.m.taobao.com,elemecdn.com,fuss10.elemecdn.com,www1.elecfans.com,interface*.music.163.com,app.58.com,adproxy.autohome.com.cn,app2.autoimg.cn,ad.12306.cn,iyes.youku.com,acs.m.goofish.com,*pornhub.com,18comic.org,adv.ccb.com
+#!homepage = https://github.com/DreamHoa/quanX
+#!loon_version = 3.5.1(978)
+#!date = 2026-10-16
 
 [Rule]
-# 米家
+# Xiaomi
 DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
 
-# 中国联通
+# China Unicom
 DOMAIN-SUFFIX, m1.ad.10010.com, REJECT
 
 [Rewrite]
-# 金十数据
-^https?:\/\/jad-api\.jin10\.com\/ad - reject
+# Jin10
+^https?:\/\/jad-api\.jin10\.com\/ad reject
 
 # KFC
-^https?:\/\/res.kfc.com.cn\/advertisement\/ - reject
+^https?:\/\/res\.kfc\.com\.cn\/advertisement\/ reject
 
-# 携程
-^https?:\/\/ma-adx\.ctrip\.com\/_ma\.gif - reject
-^https?:\/\/m\.ctrip\.com\/restapi\/.+json\/tripAds - reject
-^https?:\/\/m\.ctrip\.com\/html5\/webresource\/js\/iscroll\.js$ - reject
-^https?:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\?page\=landingshare - reject
+# Ctrip / Baidu
+^https?:\/\/ma-adx\.ctrip\.com\/_ma\.gif reject
+^https?:\/\/m\.ctrip\.com\/restapi\/.+json\/tripAds reject
+^https?:\/\/m\.ctrip\.com\/html5\/webresource\/js\/iscroll\.js$ reject
+^https?:\/\/mbd\.baidu\.com\/newspage\/api\/getmobads\?page=landingshare reject
 
-# 拼多多
-^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
+# Pinduoduo
+^https?:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash reject
 
-# 豆瓣
-^https?:\/\/api\.douban\.com\/v2\/app_ads\/splash - reject
-^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* - reject
+# Douban
+^https?:\/\/api\.douban\.com\/v2\/app_ads\/splash reject
+^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* reject
 
-# 字节跳动
-^https?:\/\/[\w-]+\.(amemv|musical|snssdk|tiktokv)\.(com|ly)\/(api|motor)\/ad\/ - reject
-^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/ad\/ - reject
-^https?:\/\/[\w-]+\.snssdk\.com\/.+_ad\/ - reject
-^https?:\/\/[\w-]+\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/ - reject
-^https?:\/\/.+?\/img\/ad\.union\.api\/ - reject
+# ByteDance
+^https?:\/\/[\w-]+\.(amemv|musical|snssdk|tiktokv)\.(com|ly)\/(api|motor)\/ad\/ reject
+^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/ad\/ reject
+^https?:\/\/[\w-]+\.snssdk\.com\/.+_ad\/ reject
+^https?:\/\/[\w-]+\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/ reject
+^https?:\/\/.+?\/img\/ad\.union\.api\/ reject
 
-# 米家
+# Xiaomi Home
 ^https?:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/myTab reject
 ^https:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|myTab)\? reject-dict
 
-# 闲鱼
-^https:\/\/gw\.alicdn\.com\/mt\/ - reject
-^https:\/\/gw\.alicdn\.com\/tfs\/.+\d{3,4}-\d{4} - reject
-^https:\/\/gw\.alicdn\.com\/tps\/.+\d{3,4}-\d{4} - reject
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome - reject
-# 闲鱼 - 开屏广告
+# Goofish / Xianyu
+^https:\/\/gw\.alicdn\.com\/mt\/ reject
+^https:\/\/gw\.alicdn\.com\/tfs\/.+\d{3,4}-\d{4} reject
+^https:\/\/gw\.alicdn\.com\/tps\/.+\d{3,4}-\d{4} reject
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome reject
 ^https:\/\/iyes\.youku\.com\/uts\/v1\/start\/ reject-dict
-# 闲鱼 - 底部浮层发布球
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.get\/ reject-dict
 
-# 掌上英雄联盟
-# ^https?:\/\/mlol\.qt\.qq\.com\/go\/recommend - reject
+# China Unicom
+^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv) reject
+^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd) reject
 
-# 中国联通
-^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv) - reject
-^https?:\/\/m\.client\.10010\.com\/uniAdmsInterface\/(getHomePageAd|getWelcomeAd) - reject
+# Meituan
+^https?:\/\/peisongapi\.meituan\.com\/client\/getInitiateImage reject
+^https?:\/\/img\.meituan\.net\/(adunion|display|midas)\/\w+\.(gif|jpg|jpg\.webp)$ reject
+^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4) reject
+^https?:\/\/p\d\.meituan\.net\/(bizad|wmbanner)\/\w+\.jpg reject
+^https?:\/\/p\d\.meituan\.net\/movie\/\w+\.jpg\?may_covertWebp reject
 
-# 美团
-^https?:\/\/peisongapi\.meituan\.com\/client\/getInitiateImage - reject
-^https?:\/\/img\.meituan\.net\/(adunion|display|midas)\/\w+\.(gif|jpg|jpg\.webp)$ - reject
-^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4) - reject
-^https?:\/\/p\d\.meituan\.net\/(bizad|wmbanner)\/\w+\.jpg - reject
-^https?:\/\/p\d\.meituan\.net\/movie\/\w+\.jpg\?may_covertWebp - reject
+# Meituan Waimai
+^https?:\/\/img\.meituan\.net\/(bizad|brandCpt)\/\w+\.(png|jpg) reject
+^https?:\/\/.*\.meituan\.com\/api\/v\d\/(openscreen\?ad|appstatus\?ad|loadInfo\?|startpicture) reject
+^http:\/\/s3plus\.meituan\.net\/.*\/brandcpt-vedio\/.*\?time reject
 
-# 美团外卖
-^https?:\/\/img\.meituan\.net\/(bizad|brandCpt)\/\w+\.(png|jpg) - reject
-^https?:\/\/.*\.meituan\.com\/api\/v\d\/(openscreen\?ad|appstatus\?ad|loadInfo\?|startpicture) - reject
-^http:\/\/s3plus\.meituan\.net\/.*\/brandcpt-vedio\/.*\?time - reject
+# Eleme
+^https?:\/\/elemecdn\.com\/.+\/sitemap reject
+^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/640\/h\/\d{3,4} reject
+^https?:\/\/fuss10\.elemecdn\.com\/.+\/w\/750\/h\/\d{3,4} reject
+^https?:\/\/fuss10\.elemecdn\.com\/.+\.mp4 reject
 
-# 饿了吗
-^https?:\/\/elemecdn.com\/.+\/sitemap - reject
-^https?:\/\/fuss10.elemecdn.com\/.+\/w\/640\/h\/\d{3,4} - reject
-^https?:\/\/fuss10.elemecdn.com\/.+\/w\/750\/h\/\d{3,4} - reject
-^https?:\/\/fuss10.elemecdn.com\/.+.mp4 - reject
-^https?:\/\/www1.elecfans.com\/www\/delivery\/ - reject
+# Elecfans
+^https?:\/\/www1\.elecfans\.com\/www\/delivery\/ reject
 
-# 网易云音乐
-#^https?:\/\/interface(\d)?.music.163.com\/eapi\/ad\/ - reject
+# Alibaba
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv\/ reject
 
-# 阿里巴巴
-^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv\/ - reject
+# 58
+^https?:\/\/app\.58\.com\/api\/home\/(advertising|appadv) reject
 
-# 掌上生活
-#^https?:\/\/mlife\.cmbchina\.com\/ClientFaceService\/api\/mlife\.clientface\.clientservice\.api\.advertiseService\/preCacheAdvertiseSec - reject
+# Autohome
+^https?:\/\/adproxy\.autohome\.com\.cn\/AdvertiseService\/ reject
+^https?:\/\/app2\.autoimg\.cn\/appdfs\/ reject
 
-# > 58
-^https?:\/\/app\.58\.com\/api\/home\/(advertising|appadv) - reject
+# PornHub request
+^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads reject-dict
 
-# 汽车之家
-^https?:\/\/adproxy.autohome.com.cn\/AdvertiseService\/ - reject
-^https?:\/\/app2.autoimg.cn\/appdfs\/ - reject
+# China Construction Bank
+^https?:\/\/adv\.ccb\.com\/ebda\/ctm_adv reject
 
-# PornHub
-^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads url reject-dict
-^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$) url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/pornhub.js
-
-# 禁漫天堂
-^https?:\/\/.*18comic\.org\/($|(album|photo).*$) url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/18comic.js
-
-# 建设银行
-^https?:\/\/adv\.ccb\.com\/ebda\/ctm_adv url reject
+# Zhihu answer-bottom recommendation ads (keeps non-ad entries)
+response if ${url} ~= /^https:\/\/www\.zhihu\.com\/api\/v4\/answers\/\d+\/recommendations(?:\?.*)?$/i then response.json.jq(".data |= map(select(.type != \"ad\"))")
 
 [Script]
-# > 12306
-http-request ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList script-path=https://github.com/ddgksf2013/Scripts/raw/master/12306.js, requires-body=true, timeout=60, tag=12306
+# External response-body scripts from the original file
+http-response ^https?:\/\/(cn|www)\.pornhub\.com\/($|(view|video).*$) script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/pornhub.js,requires-body=true,tag=PornHub
+http-response ^https?:\/\/.*18comic\.org\/($|(album|photo).*$) script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/18comic.js,requires-body=true,tag=18comic
+
+# 12306: uses the request body to generate a response
+http-request ^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/12306.js,requires-body=true,timeout=60,tag=12306
+
+[MITM]
+hostname = jad-api.jin10.com, res.kfc.com.cn, ma-adx.ctrip.com, m.ctrip.com, mbd.baidu.com, api.pinduoduo.com, api.yangkeduo.com, api.douban.com, hl.snssdk.com, home.mi.com, gw.alicdn.com, acs.m.taobao.com, m.client.10010.com, peisongapi.meituan.com, img.meituan.net, s3plus.meituan.net, flowplus.meituan.net, p*.meituan.net, www.meituan.com, wmapi.meituan.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, interface*.music.163.com, app.58.com, adproxy.autohome.com.cn, app2.autoimg.cn, ad.12306.cn, iyes.youku.com, acs.m.goofish.com, *.pornhub.com, 18comic.org, *.18comic.org, adv.ccb.com, www.zhihu.com
