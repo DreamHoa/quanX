@@ -1,0 +1,7 @@
+# Source: https://raw.githubusercontent.com/DreamHoa/quanX/main/Loon/Loon_filter_direct.list
+# Converted from Loon to Mihomo classical rule-provider; routing policy is set by RULE-SET.
+payload:
+  - DOMAIN-KEYWORD,apumpkin
+  - DOMAIN-KEYWORD,okx
+  - DOMAIN-KEYWORD,okex
+  - DOMAIN,ad.12306.cn
