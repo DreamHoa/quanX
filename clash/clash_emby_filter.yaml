@@ -1,0 +1,7 @@
+# Source: https://raw.githubusercontent.com/DreamHoa/quanX/refs/heads/main/Loon/Loon_emby_filter.list
+# Converted from Loon to Mihomo classical rule-provider; routing policy is set by RULE-SET.
+payload:
+  - DOMAIN-SUFFIX,jmsooo.com
+  - DOMAIN-SUFFIX,misakaf.org
+  - DOMAIN-SUFFIX,emby.wtf
+  - DOMAIN-KEYWORD,nebula-emby
